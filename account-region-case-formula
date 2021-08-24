@@ -1,0 +1,21 @@
+IF(LEN(BillingState)=0, "None",
+	IF(CONTAINS("NB:NL:NS:PE", BillingState), "Atlantic Region",
+		IF(CONTAINS("ON:QC", BillingState), "Central Canada",	
+			IF(CONTAINS("IL:IN:IA:KS:MI:MN:MO:NE:ND:OH:SD:WI", BillingState), "Midwest",
+				IF(CONTAINS("CT:ME:MA:NH:NJ:NY:PA:RI:VT", BillingState), "Northeast",
+					IF(CONTAINS("NT:NU:YT", BillingState), "Northern Territories",
+						IF(CONTAINS("BC", BillingState), "Pacific Region",
+							IF(CONTAINS("AB:MB:SK", BillingState), "Praire Provinces",
+								IF(CONTAINS("AL:AR:DE:DC:FL:GA:KY:LA:MD:MS:NC:OK:PR:SC:TN:TX:VA:CI:WV", BillingState), "South",
+									IF(CONTAINS("AK:AS:AZ:CA:CO:GU:HI:ID:MT:NV:NM:MP:OR:UT:WA:WY", BillingState), "West", 
+										"Unknown"
+									)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+)
